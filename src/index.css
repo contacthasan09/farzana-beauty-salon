@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS (Tailwind v4 @theme syntax)
+   ============================================================ */
+@theme {
+  --color-theme: #ffc000;
+  --color-theme2: #ab6a49;
+  --color-theme-light: rgba(171, 106, 73, 0.2);
+  --color-body: #6e6e6e;
+  --color-title: #0d0d0d;
+  --color-smoke: #f9f3f0;
+  --color-smoke2: #E8CDBF;
+  --color-line: #E0E0E0;
+  --color-dark: #0d0d0d;
+
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+
+  --radius-card: 6px;
+  --radius-soft: 10px;
+
+  --shadow-card: rgba(0, 0, 0, 0.16) 0px 5px 40px 0px;
+  --shadow-soft: rgba(0, 38, 52, 0.06) 0px 6px 20px 0px;
+  --shadow-deeper: rgba(4, 6, 66, 0.1) 0px 2px 14px 0px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #6e6e6e;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container-max {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.h-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #0d0d0d;
+  text-transform: capitalize;
+}
+.h-section {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0d0d0d;
+}
+.h-page {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+}
+.h-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #0d0d0d;
+  text-transform: capitalize;
+}
+.h-card {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0d0d0d;
+}
+.body-text {
+  font-size: 16px;
+  line-height: 28px;
+  color: #6e6e6e;
+}
+.eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffc000;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-theme {
+  display: inline-block;
+  background: #ffc000;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 21px 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-theme:hover { background: #ab6a49; color: #ffffff; }
+
+.btn-theme2 {
+  display: inline-block;
+  background: #ab6a49;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 14px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-theme2:hover { background: #ffc000; color: #ffffff; }
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: #ffc000;
+  border: 2px solid #ffc000;
+  border-radius: 50%;
+  padding: 12px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-outline:hover { background: #ffc000; color: #ffffff; }
+
+.btn-outline-white {
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  padding: 12px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: #ffffff;
+  color: #6e6e6e;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 40px 0px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 50px 0px;
+}
+
+.card-soft {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 38, 52, 0.06) 0px 6px 20px 0px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-soft:hover {
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 38, 52, 0.06) 0px 12px 32px 0px;
+}
+
+/* ============================================================
+   INPUT
+   ============================================================ */
+.input {
+  display: block;
+  width: 100%;
+  background: #f9f3f0;
+  color: #6e6e6e;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 16px 25px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+.input:focus { outline: none; border-color: #ffc000; }
+
+/* ============================================================
+   NAV LINK
+   ============================================================ */
+.nav-link {
+  color: #0d0d0d;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  background: #ffc000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover, .nav-link.active { color: #ffc000; }
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+
+a { color: #6e6e6e; text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: #ffc000; }
+
+/* ============================================================
+   DECORATIVE
+   ============================================================ */
+.gold-rule {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ffc000, transparent);
+  margin: 12px 0;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-fade-up { animation: fadeInUp 0.6s ease both; }
+.animate-spin-slow { animation: spin 1s linear infinite; }
+.animate-pulse-slow { animation: pulse 2s ease-in-out infinite; }
